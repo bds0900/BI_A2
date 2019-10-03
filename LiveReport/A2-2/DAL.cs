@@ -11,16 +11,24 @@ namespace A2_2
 {
     class DAL
     {
-        DbSet<SerialState> SerialState = null;
+
+        //DbSet<SerialState> SerialState = null;
+
+        private float PartTotalMod { get; set; }
+        private float PartSucMod { get; set; }
+        private float YieldMod { get; set; }
+        private float TotalSucPainted { get; set; }
+        private float YieldPaint { get; set; }
+        private float TotalSucAsmbld { get; set; }
+        private float YieldAsmbl { get; set; }
+        private float TotalPakgd { get; set; }
+        private float TotalYield { get; set; }
         public DAL()
         {
             if (Database.Exists(ConfigurationManager.ConnectionStrings["YoYo"].ConnectionString))
             {
                 MessageBox.Show("exist");
-                using (var context = new YoYoDbContext())
-                {
-                    SerialState = context.SerialState;
-                }
+                Update();
             }
             else
             {
@@ -31,101 +39,69 @@ namespace A2_2
         {
             using (var context = new YoYoDbContext())
             {
-                SerialState = context.SerialState;
-                              
+                PartTotalMod = (from st in context.Serial
+                                select st).Count();
+
+                PartSucMod = (from st in context.SerialState
+                              where st.StateName == "QUEUE_PAINT"
+                              select st).Count();
+                YieldMod = PartSucMod / PartTotalMod;
+
+                TotalSucPainted = (from st in context.SerialState
+                                   where st.StateName == "QUEUE_ASSEMBLY"
+                                   select st).Count();
+                YieldPaint = TotalSucPainted / PartSucMod;
+
+                TotalSucAsmbld = (from st in context.SerialState
+                                  where st.StateName == "PACKAGE"
+                                  select st).Count();
+
+                YieldAsmbl = TotalSucAsmbld / TotalSucPainted;
+
+                TotalPakgd = (from st in context.SerialState
+                              where st.StateName == "PACKAGE"
+                              select st).Count();
+                TotalYield = TotalPakgd / PartTotalMod;
             }
 
+
         }
-        public int GetPartTotalMod()
+        public float GetPartTotalMod()
         {
-            int result = 0;
-            using (var context = new YoYoDbContext())
-            {
-                result = (from st in context.Serial
-                          select st).Count();
-            }
-            return result;
+            return PartTotalMod;
         }
-        public int GetPartSucMod()
+        public float GetPartSucMod()
         {
-            int result = 0;
-            using (var context = new YoYoDbContext())
-            {
-                result = (from st in context.SerialState
-                          where st.StateName == "QUEUE_PAINT"
-                          select st).Count();
-            }
-            result = (from st in SerialState
-                      where st.StateName == "QUEUE_PAINT"
-                      select st).Count();
-            return result;
+            return PartSucMod;
         }
         public float GetYieldMod()
         {
-            float result = GetPartSucMod() / GetPartTotalMod();
-
-            return result;
+            return YieldMod;
         }
-        public int GetTotalSucPainted()
+        public float GetTotalSucPainted()
         {
-            int result = 0;
-            using (var context = new YoYoDbContext())
-            {
-                result = (from st in context.SerialState
-                          where st.StateName == "PAINT"
-                          select st).Count();
-            }
-            result = (from st in SerialState
-                      where st.StateName == "PAINT"
-                      select st).Count();
-            return result;
+            return TotalSucPainted;
         }
-        public float GetYieldPoint()
+        public float GetYieldPaint()
         {
-            float result = GetTotalSucPainted()/ GetPartSucMod();
-
-            return result;
+            return YieldPaint;
         }
-        public int GetTotalSucAsmbld()
+        public float GetTotalSucAsmbld()
         {
-            int result = 0;
-            using (var context = new YoYoDbContext())
-            {
-                result = (from st in context.SerialState
-                          where st.StateName == "QUEUE_ASSEMBLY"
-                          select st).Count();
-            }
-            result = (from st in SerialState
-                      where st.StateName == "QUEUE_ASSEMBLY"
-                      select st).Count();
-            return result;
+            return TotalSucAsmbld;
         }
         public float GetYieldAsmbl()
         {
-            float result = GetTotalSucAsmbld()/ GetTotalSucPainted();
-            return result;
+            return YieldAsmbl;
         }
-        public int GetTotalPakgd()
+        public float GetTotalPakgd()
         {
-            int result = 0;
-            using (var context = new YoYoDbContext())
-            {
-                
-                result= (from st in context.SerialState
-                         where st.StateName == "PACKAGE"
-                         select st).Count();
-                //var student = query.FirstOrDefault<SerialState>();
-            }
-            result = (from st in SerialState
-                      where st.StateName == "PACKAGE"
-                      select st).Count();
-            return result;
+           
+            return TotalPakgd;
         }
         public float GetTotalYield()
         {
-            float result = GetTotalPakgd()/ GetPartTotalMod();
-
-            return result;
+            return TotalYield;
         }
     }
 }

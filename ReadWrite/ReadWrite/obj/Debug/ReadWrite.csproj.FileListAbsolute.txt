@@ -1,0 +1,12 @@
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\ReadWrite.exe.config
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\ReadWrite.exe
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\ReadWrite.pdb
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\EntityFramework.dll
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\EntityFramework.SqlServer.dll
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\EntityFramework.xml
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\bin\Debug\EntityFramework.SqlServer.xml
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\obj\Debug\ReadWrite.csprojAssemblyReference.cache
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\obj\Debug\ReadWrite.csproj.CoreCompileInputs.cache
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\obj\Debug\ReadWrite.csproj.CopyComplete
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\obj\Debug\ReadWrite.exe
+D:\OneDrive - Conestoga College\5th\Business Intelligence\Assignments\A2\A2\ReadWrite\ReadWrite\obj\Debug\ReadWrite.pdb

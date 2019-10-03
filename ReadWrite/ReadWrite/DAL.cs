@@ -63,7 +63,7 @@ namespace ReadWrite
                     #endregion
                     context.SaveChanges();
                 }
-
+                Console.WriteLine("Data base is created!");
             }
         }
 

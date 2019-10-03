@@ -56,15 +56,15 @@
         <Label Content="Total parts sucessfully painted" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="190" FontSize="14" FontFamily="Arial Narrow"/>
         <Label Content="Yield at Assembly" HorizontalAlignment="Left" Margin="21,319,0,0" VerticalAlignment="Top" Width="113" FontSize="14" FontFamily="Arial Narrow"/>
         <Label Content="Total Yield" HorizontalAlignment="Left" Margin="21,383,0,0" VerticalAlignment="Top" Width="74" FontSize="14" FontFamily="Arial Narrow"/>
-        <TextBlock Text="{Binding part_total_mod}"  x:Name="tlt_mod" HorizontalAlignment="Left" Margin="142,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23" Loaded="Tlt_mod_Loaded"/>
-        <TextBlock Text="{Binding part_suc_mod}"  x:Name="suc_mod" HorizontalAlignment="Left" Margin="206,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding yield_mod}"  x:Name="yld_mod" HorizontalAlignment="Left" Margin="114,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding total_suc_painted}"  x:Name="tlt_suc_pntd" HorizontalAlignment="Left" Margin="201,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding total_suc_asmbld}"  x:Name="suc_asmbd" HorizontalAlignment="Left" Margin="214,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding pfo.yield_point}"  x:Name="yld_pnt" HorizontalAlignment="Left" Margin="114,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding yield_asmbl}"  x:Name="yld_asmb" HorizontalAlignment="Left" Margin="142,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding total_pakgd}"  x:Name="tlt_pakd" HorizontalAlignment="Left" Margin="143,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
-        <TextBlock Text="{Binding total_yield }"  x:Name="tlt_yld" HorizontalAlignment="Left" Margin="101,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding part_total_mod}"  x:Name="tlt_mod" HorizontalAlignment="Left" Margin="142,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Background="#FFE9EEA9" Height="23" Loaded="Tlt_mod_Loaded"/>
+        <TextBlock Text="{Binding part_suc_mod}"  x:Name="suc_mod" HorizontalAlignment="Left" Margin="206,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding yield_mod}"  x:Name="yld_mod" HorizontalAlignment="Left" Margin="114,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_suc_painted}"  x:Name="tlt_suc_pntd" HorizontalAlignment="Left" Margin="201,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_suc_asmbld}"  x:Name="tlt_suc_asmbd" HorizontalAlignment="Left" Margin="206,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding yield_point}"  x:Name="yld_pnt" HorizontalAlignment="Left" Margin="135,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding yield_asmbl}"  x:Name="yld_asmb" HorizontalAlignment="Left" Margin="142,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_pakgd}"  x:Name="tlt_pakd" HorizontalAlignment="Left" Margin="143,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_yield }"  x:Name="tlt_yld" HorizontalAlignment="Left" Margin="101,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Background="#FFE9EEA9" Height="23"/>
 
     </Grid>
 </Window>
