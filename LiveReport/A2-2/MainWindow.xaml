@@ -1,0 +1,70 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A2_2"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" x:Class="A2_2.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="ChartControl" Margin="-1,-2,0.6,2">
+
+        <dxc:ChartControl HorizontalAlignment="Left" Margin="283,19,0,0" VerticalAlignment="Top" Height="386" Width="501">
+            <dxc:ChartControl.Titles>
+                <dxc:Title Content="Rejection Reason Chart" FontWeight="Bold" FontSize="16" Margin="0" Width="178"/>
+            </dxc:ChartControl.Titles>
+            <dxc:ChartControl.Legends>
+                <dxc:Legend Margin="0,0.4,0,0" Width="104"/>
+            </dxc:ChartControl.Legends>
+            <dxc:XYDiagram2D x:Name="ParetoChart" Margin="0,10,0,0.8" Width="375">
+                <dxc:XYDiagram2D.DefaultPane>
+                    <dxc:Pane/>
+                </dxc:XYDiagram2D.DefaultPane>
+                <dxc:XYDiagram2D.AxisY>
+                    <dxc:AxisY2D>
+                        <dxc:AxisY2D.Title>
+                            <dxc:AxisTitle Content="Number of Reason" FontSize="12"/>
+                        </dxc:AxisY2D.Title>
+                    </dxc:AxisY2D>
+                </dxc:XYDiagram2D.AxisY>
+                <dxc:XYDiagram2D.SecondaryAxesY>
+                    <dxc:SecondaryAxisY2D>
+                        <dxc:SecondaryAxisY2D.Title>
+                            <dxc:AxisTitle Content="Percentage" FontSize="12"/>
+                        </dxc:SecondaryAxisY2D.Title>
+                    </dxc:SecondaryAxisY2D>
+                </dxc:XYDiagram2D.SecondaryAxesY>
+                <dxc:XYDiagram2D.AxisX>
+                    <dxc:AxisX2D FontSize="1">
+                        <dxc:AxisX2D.Title>
+                            <dxc:AxisTitle Content="Reasons' Name" FontSize="12"/>
+                        </dxc:AxisX2D.Title>
+                    </dxc:AxisX2D>
+                </dxc:XYDiagram2D.AxisX>
+                <dxc:BarSideBySideSeries2D DisplayName="Reason" FontSize="9"/>
+                <dxc:BarSideBySideSeries2D DisplayName="Cumulative" FontSize="9"/>
+            </dxc:XYDiagram2D>
+        </dxc:ChartControl>
+        <ListBox x:Name="lbx_product" HorizontalAlignment="Left" Height="33" Margin="85,31,0,0" VerticalAlignment="Top" Width="173"/>
+        <Label Content="Product" HorizontalAlignment="Left" Margin="21,34,0,0" VerticalAlignment="Top" Width="59" FontSize="14"/>
+        <Label Content="Total parts molded" HorizontalAlignment="Left" Margin="21,138,0,0" VerticalAlignment="Top" Width="118" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Yield at Mold" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="97" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Total parts successfully assembled" HorizontalAlignment="Left" Margin="21,287,0,0" VerticalAlignment="Top" Width="205" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Total parts packaged" HorizontalAlignment="Left" Margin="21,351,0,0" VerticalAlignment="Top" Width="130" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Yield at Paint" HorizontalAlignment="Left" Margin="21,256,0,0" VerticalAlignment="Top" Width="87" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Total parts successfully molded" HorizontalAlignment="Left" Margin="21,166,0,0" VerticalAlignment="Top" Width="202" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Total parts sucessfully painted" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="190" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Yield at Assembly" HorizontalAlignment="Left" Margin="21,319,0,0" VerticalAlignment="Top" Width="113" FontSize="14" FontFamily="Arial Narrow"/>
+        <Label Content="Total Yield" HorizontalAlignment="Left" Margin="21,383,0,0" VerticalAlignment="Top" Width="74" FontSize="14" FontFamily="Arial Narrow"/>
+        <TextBlock Text="{Binding part_total_mod}"  x:Name="tlt_mod" HorizontalAlignment="Left" Margin="142,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23" Loaded="Tlt_mod_Loaded"/>
+        <TextBlock Text="{Binding part_suc_mod}"  x:Name="suc_mod" HorizontalAlignment="Left" Margin="206,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding yield_mod}"  x:Name="yld_mod" HorizontalAlignment="Left" Margin="114,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_suc_painted}"  x:Name="tlt_suc_pntd" HorizontalAlignment="Left" Margin="201,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_suc_asmbld}"  x:Name="suc_asmbd" HorizontalAlignment="Left" Margin="214,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding pfo.yield_point}"  x:Name="yld_pnt" HorizontalAlignment="Left" Margin="114,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding yield_asmbl}"  x:Name="yld_asmb" HorizontalAlignment="Left" Margin="142,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_pakgd}"  x:Name="tlt_pakd" HorizontalAlignment="Left" Margin="143,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+        <TextBlock Text="{Binding total_yield }"  x:Name="tlt_yld" HorizontalAlignment="Left" Margin="101,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Background="#FFE9EEA9" Height="23"/>
+
+    </Grid>
+</Window>
